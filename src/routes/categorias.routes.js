@@ -15,5 +15,11 @@ router.get("/:id",categoriaController.getCategory);/*crear*/
 router.put("/:id",categoriaController.updateCategorias );/*leer*/
 /*delete*/
 router.delete("/:id",categoriaController.deleteCategory );/*leer*/
+
 /* hacemos disponible a router en toda la app */
+
+
+
+
+
 export default router;

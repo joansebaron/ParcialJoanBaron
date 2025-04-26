@@ -41,6 +41,19 @@ const getCategory = async (req, res) => {
 
 }
 
+const getEmpleados = async (req, res) => {
+  try {
+    const connection = await getConnection();
+    const [rows] = await connection.query("SELECT * FROM empleados");
+    res.json(rows);
+  } catch (error) {
+    console.error("ERROR 500", error);
+    res.status(500).json({ message: "Error al obtener empleados" });
+  }
+};
+
+
+
 const deleteCategory = async (req, res) => {
   try {
     console.log("id de categoria a borrar",req.params);   
@@ -73,5 +86,6 @@ export const methodHTTP={
     getCategory,
     deleteCategory,
     updateCategorias,
+    getEmpleados,
 }
 
