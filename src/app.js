@@ -17,4 +17,10 @@ app.use("/api/clientes", clientesRoutes);
 app.use(productosRoutes);
 app.set("port", 5000);
 
+app.get('/',(req,res)=>{
+    res.send('REST API EN RENDER WITHOUT DATABASE ENDPOINTS')
+})
+
+
+
 export default app;
